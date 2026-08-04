@@ -3,123 +3,161 @@
 import FadeIn from "./FadeIn";
 
 export default function Packages() {
+  const packages = [
+    {
+      title: "Basic Detail",
+      badge: "Essential Care",
+      price: "Starting at $100",
+      time: "Approx. 1.5 Hours",
+      featured: false,
+      description:
+        "Perfect for routine maintenance and keeping your motorcycle looking clean between full details.",
+      features: [
+        "Foam bath & hand wash",
+        "Wheels & tires cleaned",
+        "Seat cleaned",
+        "Plastic & trim wiped down",
+        "Light air blower drying",
+        "Final inspection",
+      ],
+    },
+    {
+      title: "Refresh Detail",
+      badge: "⭐ Most Popular",
+      price: "Starting at $150",
+      time: "Approx. 2 Hours",
+      featured: true,
+      description:
+        "Restore your motorcycle's shine with our most popular detailing package.",
+      features: [
+        "Foam bath & hand wash",
+        "Wheels, tires & fenders cleaned",
+        "Chrome & metal polished",
+        "Seat & surfaces wiped down",
+        "Whitewall-safe cleaning",
+        "Chain cleaned & lubricated",
+        "Light air blower drying",
+        "Final inspection",
+      ],
+    },
+    {
+      title: "Luxury Motorcycle Detail",
+      badge: "Ultimate Protection",
+      price: "Starting at $250",
+      time: "Approx. 3.5 Hours",
+      featured: false,
+      description:
+        "Our premium detailing experience for riders who want their motorcycle looking its absolute best.",
+      features: [
+        "Everything included in the Refresh Detail",
+        "Tank & fairing deep clean",
+        "Engine detailing",
+        "Leather conditioning",
+        "Paint sealant protection",
+        "Premium finishing touches",
+      ],
+    },
+  ];
+
   return (
-    <FadeIn>
-      <section
-        id="packages"
-        className="bg-[#080808] text-white py-28 px-6"
-      >
-        <div className="max-w-7xl mx-auto">
+    <section
+      id="packages"
+      className="bg-black text-white py-24 px-6"
+    >
+      <FadeIn>
+        <div className="max-w-7xl mx-auto text-center">
 
-          <div className="text-center mb-20">
-            <p className="uppercase tracking-[0.35em] text-[#BFA46F] font-semibold">
-              DETAILING PACKAGES
-            </p>
+          <p className="uppercase tracking-[0.3em] text-yellow-500 font-semibold">
+            THIS IS A TEST
+          </p>
 
-            <h2 className="mt-5 text-5xl font-bold">
-              Choose Your Detail
-            </h2>
+          <h2 className="text-5xl font-black mt-4">
+            Motorcycle Detailing Packages
+          </h2>
 
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-[#B4B7BD]">
-              Premium care with straightforward pricing.
-            </p>
-          </div>
+          <p className="text-gray-400 max-w-2xl mx-auto mt-6">
+            Professional motorcycle detailing designed to keep your ride
+            protected, polished, and road ready.
+          </p>
 
-          <div className="grid gap-8 lg:grid-cols-3">
+          <div className="grid lg:grid-cols-3 gap-8 mt-16">
 
-            {/* Basic */}
-
-            <div className="rounded-3xl border border-white/10 bg-[#121212] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#BFA46F]/50">
-
-              <h3 className="text-3xl font-semibold">
-                Basic Wash
-              </h3>
-
-              <p className="mt-6 text-5xl font-bold text-[#BFA46F]">
-                $100
-              </p>
-
-              <ul className="mt-8 space-y-4 text-[#B4B7BD]">
-                <li>✓ Hand Wash</li>
-                <li>✓ Wheels Cleaned</li>
-                <li>✓ Tire Shine</li>
-                <li>✓ Dry & Finish</li>
-              </ul>
-
-              <a
-                href="/book"
-                className="mt-10 block w-full rounded-full border border-white py-3 text-center font-semibold transition hover:bg-white hover:text-black"
+            {packages.map((pkg) => (
+              <div
+                key={pkg.title}
+                className={`rounded-3xl p-8 border transition-all duration-300 hover:-translate-y-2 ${
+                  pkg.featured
+                    ? "border-yellow-500 bg-zinc-900 scale-105 shadow-2xl shadow-yellow-500/10"
+                    : "border-zinc-700 bg-zinc-900 hover:border-yellow-500"
+                }`}
               >
-                Book Now
-              </a>
+                <div className="mb-6">
 
-            </div>
+                  <span
+                    className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
+                      pkg.featured
+                        ? "bg-yellow-500 text-black"
+                        : "bg-zinc-800 text-yellow-400"
+                    }`}
+                  >
+                    {pkg.badge}
+                  </span>
 
-            {/* Premium */}
+                </div>
 
-            <div className="relative rounded-3xl border border-[#BFA46F] bg-[#121212] p-8 transition-all duration-300 hover:-translate-y-2">
+                <h3 className="text-3xl font-bold">
+                  {pkg.title}
+                </h3>
 
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#BFA46F] px-5 py-2 text-xs font-bold uppercase tracking-widest text-black">
-                Most Popular
+                <p className="text-yellow-500 text-3xl font-black mt-5">
+                  {pkg.price}
+                </p>
+
+                <p className="text-gray-400 mt-2">
+                  {pkg.time}
+                </p>
+
+                <p className="text-gray-300 mt-6 leading-relaxed">
+                  {pkg.description}
+                </p>
+
+                <ul className="mt-8 space-y-4 text-left">
+
+                  {pkg.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="text-yellow-500 mt-1">✓</span>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+
+                </ul>
+
+                <a
+                  href="/book"
+                  className={`block mt-10 rounded-xl py-4 font-bold transition ${
+                    pkg.featured
+                      ? "bg-yellow-500 text-black hover:bg-yellow-400"
+                      : "bg-zinc-800 hover:bg-zinc-700"
+                  }`}
+                >
+                  Book This Package
+                </a>
+
               </div>
-
-              <h3 className="text-3xl font-semibold mt-5">
-                Premium Detail
-              </h3>
-
-              <p className="mt-6 text-5xl font-bold text-[#BFA46F]">
-                $175
-              </p>
-
-              <ul className="mt-8 space-y-4 text-[#B4B7BD]">
-                <li>✓ Everything in Basic</li>
-                <li>✓ Chrome Polish</li>
-                <li>✓ Paint Protection</li>
-                <li>✓ Engine Detail</li>
-                <li>✓ Premium Finish</li>
-              </ul>
-
-              <a
-                href="/book"
-                className="mt-10 block w-full rounded-full bg-[#BFA46F] py-3 text-center font-semibold text-black transition hover:opacity-90"
-              >
-                Book Now
-              </a>
-
-            </div>
-
-            {/* Showroom */}
-
-            <div className="rounded-3xl border border-white/10 bg-[#121212] p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[#BFA46F]/50">
-
-              <h3 className="text-3xl font-semibold">
-                Showroom Detail
-              </h3>
-
-              <p className="mt-6 text-5xl font-bold text-[#BFA46F]">
-                $250+
-              </p>
-
-              <ul className="mt-8 space-y-4 text-[#B4B7BD]">
-                <li>✓ Complete Detail</li>
-                <li>✓ Paint Enhancement</li>
-                <li>✓ Ceramic Spray Protection</li>
-                <li>✓ Custom Add-Ons</li>
-              </ul>
-
-              <a
-                href="/book"
-                className="mt-10 block w-full rounded-full border border-white py-3 text-center font-semibold transition hover:bg-white hover:text-black"
-              >
-                Book Now
-              </a>
-
-            </div>
+            ))}
 
           </div>
+
+          <p className="text-gray-500 text-sm max-w-3xl mx-auto mt-12">
+            Prices may vary depending on motorcycle size, condition, and requested add-on services.
+            A final quote will always be provided before work begins.
+          </p>
 
         </div>
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </section>
   );
 }
