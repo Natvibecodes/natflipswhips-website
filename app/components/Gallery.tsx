@@ -80,29 +80,6 @@ export default function Gallery() {
 
           </div>
 
-          {/* CTA */}
-
-          <div className="mt-24 rounded-3xl border border-[#BFA46F]/30 bg-[#111111] px-8 py-16 text-center">
-
-            <h3 className="text-4xl font-bold">
-              Love What You See?
-            </h3>
-
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-[#B4B7BD]">
-              Every motorcycle receives the same attention to detail,
-              professionalism, and care. Book your appointment today and let
-              your bike stand out.
-            </p>
-
-            <a
-              href="/book"
-              className="mt-10 inline-flex rounded-full bg-[#BFA46F] px-8 py-4 text-lg font-semibold text-black transition hover:scale-105 hover:opacity-90"
-            >
-              Book Your Detail
-            </a>
-
-          </div>
-
         </div>
       </section>
     </FadeIn>

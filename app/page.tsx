@@ -21,8 +21,8 @@ export default function Home() {
       <Packages />
       <Inventory />
       <About />
-      <Reviews />
-      <Gallery />
+{/* <Reviews /> */}      
+<Gallery />
       <Booking />
       <Contact />
       <Footer />

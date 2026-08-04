@@ -68,12 +68,12 @@ export default function Contact() {
               Contact Us
             </p>
 
-            <h2 className="text-4xl md:text-5xl font-black mt-4">
-              Book Your Detail Today
-            </h2>
+            <h2 className="text-4xl md:text-5xl">
+  Questions Before Booking?
+</h2>
 
             <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-              Ready to schedule your motorcycle detail or have a question about a vehicle?
+              Need help choosing the right detailing package or have a question about your motorcycle? 
               Send us a message and we'll get back to you as soon as possible.
             </p>
 

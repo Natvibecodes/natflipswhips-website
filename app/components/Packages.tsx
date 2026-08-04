@@ -68,8 +68,7 @@ export default function Packages() {
         <div className="max-w-7xl mx-auto text-center">
 
           <p className="uppercase tracking-[0.3em] text-yellow-500 font-semibold">
-            THIS IS A TEST
-          </p>
+Pricing          </p>
 
           <h2 className="text-5xl font-black mt-4">
             Motorcycle Detailing Packages
