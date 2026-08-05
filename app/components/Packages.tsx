@@ -7,7 +7,8 @@ export default function Packages() {
     {
       title: "Basic Detail",
       badge: "Essential Care",
-      price: "Starting at $100",
+      originalPrice: "$100",
+      salePrice: "$70",
       time: "Approx. 1.5 Hours",
       featured: false,
       description:
@@ -24,7 +25,8 @@ export default function Packages() {
     {
       title: "Refresh Detail",
       badge: "⭐ Most Popular",
-      price: "Starting at $150",
+      originalPrice: "$150",
+      salePrice: "$120",
       time: "Approx. 2 Hours",
       featured: true,
       description:
@@ -43,7 +45,8 @@ export default function Packages() {
     {
       title: "Luxury Motorcycle Detail",
       badge: "Ultimate Protection",
-      price: "Starting at $250",
+      originalPrice: "$250",
+      salePrice: "$220",
       time: "Approx. 3.5 Hours",
       featured: false,
       description:
@@ -53,6 +56,7 @@ export default function Packages() {
         "Tank & fairing deep clean",
         "Engine detailing",
         "Leather conditioning",
+        "Premium chrome polish",
         "Paint sealant protection",
         "Premium finishing touches",
       ],
@@ -68,18 +72,31 @@ export default function Packages() {
         <div className="max-w-7xl mx-auto text-center">
 
           <p className="uppercase tracking-[0.3em] text-yellow-500 font-semibold">
-Pricing          </p>
+            Pricing
+          </p>
 
-          <h2 className="text-5xl font-black mt-4">
+          <h2 className="text-4xl md:text-5xl font-black mt-4">
             Motorcycle Detailing Packages
           </h2>
 
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6">
+          <div className="mx-auto mt-8 mb-14 max-w-3xl rounded-2xl border border-yellow-500 bg-yellow-500/10 p-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-yellow-400">
+              🎂 Nat's Birthday Month Special
+            </h3>
+
+            <p className="mt-3 text-gray-200 text-lg">
+              Celebrate with me and save
+              <span className="font-bold text-white"> $30 OFF </span>
+              any motorcycle detailing package booked this month!
+            </p>
+          </div>
+
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Professional motorcycle detailing designed to keep your ride
             protected, polished, and road ready.
           </p>
 
-          <div className="grid lg:grid-cols-3 gap-8 mt-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
             {packages.map((pkg) => (
               <div
@@ -91,7 +108,6 @@ Pricing          </p>
                 }`}
               >
                 <div className="mb-6">
-
                   <span
                     className={`inline-block px-4 py-2 rounded-full text-sm font-semibold ${
                       pkg.featured
@@ -101,18 +117,27 @@ Pricing          </p>
                   >
                     {pkg.badge}
                   </span>
-
                 </div>
 
                 <h3 className="text-3xl font-bold">
                   {pkg.title}
                 </h3>
 
-                <p className="text-yellow-500 text-3xl font-black mt-5">
-                  {pkg.price}
-                </p>
+                <div className="mt-6">
+                  <p className="text-gray-500 line-through text-xl">
+                    {pkg.originalPrice}
+                  </p>
 
-                <p className="text-gray-400 mt-2">
+                  <p className="text-yellow-500 text-5xl font-black">
+                    {pkg.salePrice}
+                  </p>
+
+                  <p className="mt-3 inline-block rounded-full bg-red-600 px-3 py-1 text-sm font-bold text-white">
+                    🎉 Save $30 This Month
+                  </p>
+                </div>
+
+                <p className="text-gray-400 mt-3">
                   {pkg.time}
                 </p>
 
@@ -144,15 +169,14 @@ Pricing          </p>
                 >
                   Book This Package
                 </a>
-
               </div>
             ))}
 
           </div>
 
           <p className="text-gray-500 text-sm max-w-3xl mx-auto mt-12">
-            Prices may vary depending on motorcycle size, condition, and requested add-on services.
-            A final quote will always be provided before work begins.
+            Birthday Month Special ends soon. Prices may vary depending on motorcycle size,
+            condition, and requested add-on services. A final quote will always be provided before work begins.
           </p>
 
         </div>
