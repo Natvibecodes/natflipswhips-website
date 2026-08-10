@@ -42,3 +42,12 @@ body {
 html {
   scroll-behavior: smooth;
 }
+html {
+  font-size: 90%;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 85%;
+  }
+}
