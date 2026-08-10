@@ -173,16 +173,18 @@ export default function Contact() {
               />
 
               <select
-                value={form.service}
-                onChange={(e) => setForm({ ...form, service: e.target.value })}
-                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
-              >
-                <option>Sedan</option>
-                <option>SUV</option>
-                <option>Truck</option>
-                <option>Commercial Vehicle</option>
-                <option>Motorcycle</option>
-              </select>
+  value={form.service}
+  onChange={(e) => setForm({ ...form, service: e.target.value })}
+  className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
+>
+  <option>Sedan Detail</option>
+  <option>SUV Detail</option>
+  <option>Truck Detail</option>
+  <option>Motorcycle Detail</option>
+  <option>Commercial Detail</option>
+  <option>Vehicle Purchase</option>
+  <option>General Question</option>
+</select>
 
               <textarea
                 rows={6}
