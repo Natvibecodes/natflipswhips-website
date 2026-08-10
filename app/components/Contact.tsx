@@ -7,7 +7,7 @@ const defaultForm = {
   name: "",
   email: "",
   phone: "",
-  service: "Motorcycle Detailing",
+  service: "Sedan",
   message: "",
 };
 
@@ -177,23 +177,11 @@ export default function Contact() {
                 onChange={(e) => setForm({ ...form, service: e.target.value })}
                 className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
               >
-                <option>Motorcycle Detailing</option>
-                <option>Motorcycle Paint Correction</option>
-                <option>Motorcycle Ceramic Coating</option>
-                <option>Car Detailing</option>
-                <option>SUV / Crossover Detailing</option>
-                <option>Truck Detailing</option>
-                <option>Interior Deep Clean</option>
-                <option>Exterior Detail &amp; Paint Enhancement</option>
-                <option>Paint Correction</option>
-                <option>Ceramic Coating</option>
-                <option>Commercial Fleet Detailing</option>
-                <option>Dealership Vehicle Detailing</option>
-                <option>Commercial Equipment Detailing</option>
-                <option>Vehicle Purchase Inquiry</option>
-                <option>Vehicle Sales Question</option>
-                <option>Custom Quote</option>
-                <option>General Question</option>
+                <option>Sedan</option>
+                <option>SUV</option>
+                <option>Truck</option>
+                <option>Commercial Vehicle</option>
+                <option>Motorcycle</option>
               </select>
 
               <textarea
