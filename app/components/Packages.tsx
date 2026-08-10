@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import FadeIn from "./FadeIn";
 
 export default function Packages() {
@@ -66,60 +67,190 @@ export default function Packages() {
 
   const vehiclePackages = [
     {
-      title: "Sedan Detail",
-      badge: "Daily Driver",
-      price: "$120+",
-      time: "Approx. 2–3 Hours",
-      featured: false,
-      description:
-        "A clean, polished reset for your car that brings back the fresh look and feel of your daily driver.",
-      bestFor: "Routine maintenance, commuting vehicles, or getting ready for a night out.",
-      features: [
-        "Hand wash & foam bath",
-        "Wheels, tires & exterior trim cleaned",
-        "Interior vacuumed",
-        "Dash, console & door panels wiped down",
-        "Windows cleaned inside and out",
-        "Tire shine & final inspection",
+      vehicle: "Sedan",
+      packages: [
+        {
+          title: "Basic Detail",
+          price: "$120+",
+          time: "Approx. 2 Hours",
+          description:
+            "A clean, polished reset for your daily driver that refreshes the inside and out.",
+          bestFor: "Routine maintenance and keeping your sedan looking its best.",
+          features: [
+            "Foam bath & hand wash",
+            "Wheels, tires & exterior trim cleaned",
+            "Interior vacuumed",
+            "Dash, console & door panels wiped down",
+            "Windows cleaned inside and out",
+            "Tire shine & final inspection",
+          ],
+        },
+        {
+          title: "Refresh Detail",
+          price: "$150+",
+          time: "Approx. 2.5 Hours",
+          description:
+            "A deeper refresh for sedans that need extra attention after everyday use.",
+          bestFor: "Restoring a clean feel before a trip, event, or change of season.",
+          features: [
+            "Everything in the Basic Detail",
+            "Deeper interior vacuuming",
+            "Floor mats cleaned",
+            "Cup holders & small areas detailed",
+            "Interior surfaces protected",
+            "Premium finishing touches",
+          ],
+        },
+        {
+          title: "Luxury Detail",
+          price: "$220+",
+          time: "Approx. 3.5 Hours",
+          description:
+            "A premium full detail with the extra care your sedan needs to look sale-ready.",
+          bestFor: "Special occasions, selling, or giving your vehicle the highest level of care.",
+          features: [
+            "Everything in the Refresh Detail",
+            "Deep interior cleaning",
+            "Spot treatment for stains",
+            "Detailed trunk cleaning",
+            "Paint sealant protection",
+            "Premium finishing touches",
+          ],
+        },
       ],
     },
     {
-      title: "SUV Detail",
-      badge: "⭐ Most Popular",
-      price: "$140+",
-      time: "Approx. 2.5–3.5 Hours",
-      featured: true,
-      description:
-        "A thorough interior and exterior refresh designed for family vehicles, crossovers, and SUVs with more room to care for.",
-      bestFor: "Family vehicles, road trips, carpools, and everyday adventure.",
-      features: [
-        "Hand wash & foam bath",
-        "Wheels, tires & exterior trim cleaned",
-        "Interior vacuum, including cargo area",
-        "Dash, console & door panels wiped down",
-        "Windows cleaned inside and out",
-        "Tire shine & final inspection",
+      vehicle: "SUV",
+      packages: [
+        {
+          title: "Basic Detail",
+          price: "$140+",
+          time: "Approx. 2.5 Hours",
+          description:
+            "A full refresh for your SUV, including the extra interior and cargo space that comes with it.",
+          bestFor: "Family vehicles, commuters, and everyday adventure vehicles.",
+          features: [
+            "Foam bath & hand wash",
+            "Wheels, tires & exterior trim cleaned",
+            "Interior and cargo area vacuumed",
+            "Dash, console & door panels wiped down",
+            "Windows cleaned inside and out",
+            "Tire shine & final inspection",
+          ],
+        },
+        {
+          title: "Refresh Detail",
+          price: "$160+",
+          time: "Approx. 3 Hours",
+          description:
+            "A deeper interior and exterior refresh for SUVs that need more than a standard cleanup.",
+          bestFor: "Road trips, carpools, pets, kids, and seasonal vehicle refreshes.",
+          features: [
+            "Everything in the Basic Detail",
+            "Detailed cargo area cleaning",
+            "Floor mats cleaned",
+            "Cup holders & small areas detailed",
+            "Interior surfaces protected",
+            "Premium finishing touches",
+          ],
+        },
+        {
+          title: "Luxury Detail",
+          price: "$250+",
+          time: "Approx. 4 Hours",
+          description:
+            "Our complete SUV detail with extra attention to the cabin, cargo area, and exterior finish.",
+          bestFor: "Selling, special occasions, or bringing your SUV back to its best condition.",
+          features: [
+            "Everything in the Refresh Detail",
+            "Deep interior cleaning",
+            "Spot treatment for stains",
+            "Detailed cargo area cleaning",
+            "Paint sealant protection",
+            "Premium finishing touches",
+          ],
+        },
       ],
     },
     {
-      title: "Truck Detail",
-      badge: "Work Ready",
-      price: "$150+",
-      time: "Approx. 2.5–3.5 Hours",
-      featured: false,
-      description:
-        "A detail built for hardworking trucks, with focused care for the cab, exterior, wheels, and bed area.",
-      bestFor: "Work trucks, weekend vehicles, and trucks that see the dirtier side of life.",
-      features: [
-        "Hand wash & foam bath",
-        "Wheels, tires & exterior trim cleaned",
-        "Cab vacuumed and wiped down",
-        "Truck bed blown out or rinsed",
-        "Windows cleaned inside and out",
-        "Tire shine & final inspection",
+      vehicle: "Truck",
+      packages: [
+        {
+          title: "Basic Detail",
+          price: "$150+",
+          time: "Approx. 2.5 Hours",
+          description:
+            "A sharp, work-ready cleanup for trucks that need the cab, exterior, and bed area refreshed.",
+          bestFor: "Daily drivers, weekend trucks, and regularly maintained work vehicles.",
+          features: [
+            "Foam bath & hand wash",
+            "Wheels, tires & exterior trim cleaned",
+            "Cab vacuumed and wiped down",
+            "Truck bed blown out or rinsed",
+            "Windows cleaned inside and out",
+            "Tire shine & final inspection",
+          ],
+        },
+        {
+          title: "Refresh Detail",
+          price: "$200+",
+          time: "Approx. 3 Hours",
+          description:
+            "A deeper refresh for trucks that work hard and need more attention inside and out.",
+          bestFor: "Work trucks, off-road vehicles, and trucks after a busy season.",
+          features: [
+            "Everything in the Basic Detail",
+            "Deeper cab vacuuming",
+            "Floor mats cleaned",
+            "Detailed console & storage areas",
+            "Interior surfaces protected",
+            "Premium finishing touches",
+          ],
+        },
+        {
+          title: "Luxury Detail",
+          price: "$275+",
+          time: "Approx. 4 Hours",
+          description:
+            "A premium truck detail with deeper cleaning and protection for a complete finish.",
+          bestFor: "Selling, special events, or bringing a hardworking truck back to life.",
+          features: [
+            "Everything in the Refresh Detail",
+            "Deep interior cleaning",
+            "Spot treatment for stains",
+            "Detailed truck bed cleaning",
+            "Paint sealant protection",
+            "Premium finishing touches",
+          ],
+        },
       ],
     },
   ];
+
+  const [selectedVehicle, setSelectedVehicle] = useState(0);
+  const [selectedPackage, setSelectedPackage] = useState(0);
+
+  const activeVehicle = vehiclePackages[selectedVehicle];
+  const activePackage = activeVehicle.packages[selectedPackage];
+
+  function showPreviousPackage() {
+    setSelectedPackage(
+      (current) =>
+        (current - 1 + activeVehicle.packages.length) %
+        activeVehicle.packages.length
+    );
+  }
+
+  function showNextPackage() {
+    setSelectedPackage(
+      (current) => (current + 1) % activeVehicle.packages.length
+    );
+  }
+
+  function chooseVehicle(index: number) {
+    setSelectedVehicle(index);
+    setSelectedPackage(0);
+  }
 
   return (
     <section id="packages" className="bg-black px-5 py-20 text-white md:px-6">
@@ -220,68 +351,108 @@ export default function Packages() {
             <h3 className="text-3xl font-bold">🚗 Vehicle Detail Packages</h3>
 
             <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-400">
-              Premium mobile detailing for sedans, SUVs, and trucks—done at
-              your home, workplace, dealership, or job site.
+              Choose your vehicle, then slide through the detail packages to
+              find the level of care that fits your needs.
             </p>
 
-            <div className="mt-12 grid gap-8 lg:grid-cols-3">
-              {vehiclePackages.map((pkg) => (
-                <div
-                  key={pkg.title}
-                  className={`rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 ${
-                    pkg.featured
-                      ? "scale-105 border-yellow-500 bg-zinc-900 shadow-2xl shadow-yellow-500/10"
-                      : "border-zinc-700 bg-zinc-900 hover:border-yellow-500"
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {vehiclePackages.map((vehicle, index) => (
+                <button
+                  key={vehicle.vehicle}
+                  type="button"
+                  onClick={() => chooseVehicle(index)}
+                  className={`rounded-full px-6 py-3 font-bold transition ${
+                    selectedVehicle === index
+                      ? "bg-yellow-500 text-black"
+                      : "border border-zinc-700 bg-zinc-900 text-white hover:border-yellow-500 hover:text-yellow-400"
                   }`}
                 >
-                  <span
-                    className={`inline-block rounded-full px-4 py-2 text-sm font-semibold ${
-                      pkg.featured
-                        ? "bg-yellow-500 text-black"
-                        : "bg-zinc-800 text-yellow-400"
-                    }`}
-                  >
-                    {pkg.badge}
-                  </span>
-
-                  <h4 className="mt-6 text-3xl font-bold">{pkg.title}</h4>
-
-                  <p className="mt-5 text-5xl font-black text-yellow-500">
-                    Starting at {pkg.price}
-                  </p>
-
-                  <p className="mt-2 text-gray-400">{pkg.time}</p>
-
-                  <p className="mt-6 leading-8 text-gray-300">
-                    {pkg.description}
-                  </p>
-
-                  <p className="mt-5 rounded-xl border border-zinc-700 bg-black/40 p-4 text-left text-sm leading-6 text-gray-300">
-                    <span className="font-bold text-yellow-500">Best For: </span>
-                    {pkg.bestFor}
-                  </p>
-
-                  <ul className="mt-8 space-y-4 text-left">
-                    {pkg.features.map((feature) => (
-                      <li key={feature} className="flex gap-3">
-                        <span className="text-yellow-500">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href="/book"
-                    className={`mt-10 block rounded-xl py-4 font-bold transition ${
-                      pkg.featured
-                        ? "bg-yellow-500 text-black hover:bg-yellow-400"
-                        : "bg-zinc-800 hover:bg-zinc-700"
-                    }`}
-                  >
-                    Book This Package
-                  </a>
-                </div>
+                  {vehicle.vehicle}
+                </button>
               ))}
+            </div>
+
+            <div
+              key={`${activeVehicle.vehicle}-${activePackage.title}`}
+              className="mx-auto mt-10 max-w-2xl rounded-3xl border border-yellow-500 bg-zinc-900 p-7 text-left shadow-2xl shadow-yellow-500/10 sm:p-10"
+            >
+              <div className="flex items-center justify-between gap-4">
+                <p className="font-semibold uppercase tracking-[0.2em] text-yellow-500">
+                  {activeVehicle.vehicle}
+                </p>
+
+                <p className="text-sm text-gray-400">
+                  Package {selectedPackage + 1} of{" "}
+                  {activeVehicle.packages.length}
+                </p>
+              </div>
+
+              <h4 className="mt-5 text-4xl font-black">{activePackage.title}</h4>
+
+              <p className="mt-5 text-5xl font-black text-yellow-500">
+                Starting at {activePackage.price}
+              </p>
+
+              <p className="mt-2 text-gray-400">{activePackage.time}</p>
+
+              <p className="mt-7 text-lg leading-8 text-gray-300">
+                {activePackage.description}
+              </p>
+
+              <p className="mt-6 rounded-xl border border-zinc-700 bg-black/40 p-4 leading-6 text-gray-300">
+                <span className="font-bold text-yellow-500">Best For: </span>
+                {activePackage.bestFor}
+              </p>
+
+              <ul className="mt-8 space-y-4">
+                {activePackage.features.map((feature) => (
+                  <li key={feature} className="flex gap-3">
+                    <span className="text-yellow-500">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="/book"
+                className="mt-10 block rounded-xl bg-yellow-500 py-4 text-center font-bold text-black transition hover:bg-yellow-400"
+              >
+                Book This Package
+              </a>
+
+              <div className="mt-6 flex items-center justify-between gap-4">
+                <button
+                  type="button"
+                  onClick={showPreviousPackage}
+                  className="rounded-xl border border-zinc-700 px-5 py-3 font-bold transition hover:border-yellow-500 hover:text-yellow-400"
+                >
+                  ← Previous
+                </button>
+
+                <div className="flex gap-2">
+                  {activeVehicle.packages.map((pkg, index) => (
+                    <button
+                      key={pkg.title}
+                      type="button"
+                      onClick={() => setSelectedPackage(index)}
+                      aria-label={`View ${pkg.title}`}
+                      className={`h-3 w-3 rounded-full transition ${
+                        selectedPackage === index
+                          ? "bg-yellow-500"
+                          : "bg-zinc-700 hover:bg-zinc-500"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={showNextPackage}
+                  className="rounded-xl border border-zinc-700 px-5 py-3 font-bold transition hover:border-yellow-500 hover:text-yellow-400"
+                >
+                  Next →
+                </button>
+              </div>
             </div>
           </div>
 
