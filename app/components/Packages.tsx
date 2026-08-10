@@ -66,40 +66,58 @@ export default function Packages() {
 
   const vehiclePackages = [
     {
-      vehicle: "Sedans",
-      essential: "$120+",
-      refresh: "$150+",
-      luxury: "$220+",
-    },
-    {
-      vehicle: "SUVs",
-      essential: "$140+",
-      refresh: "$160+",
-      luxury: "$250+",
-    },
-    {
-      vehicle: "Trucks",
-      essential: "$150+",
-      refresh: "$200+",
-      luxury: "$275+",
-    },
-  ];
-
-  const vehicleDetailLevels = [
-    {
-      title: "✨ Essential Detail",
+      title: "Sedan Detail",
+      badge: "Daily Driver",
+      price: "$120+",
+      time: "Approx. 2–3 Hours",
+      featured: false,
       description:
-        "A clean exterior reset for regularly maintained vehicles that need a polished, refreshed look.",
+        "A clean, polished reset for your car that brings back the fresh look and feel of your daily driver.",
+      bestFor: "Routine maintenance, commuting vehicles, or getting ready for a night out.",
+      features: [
+        "Hand wash & foam bath",
+        "Wheels, tires & exterior trim cleaned",
+        "Interior vacuumed",
+        "Dash, console & door panels wiped down",
+        "Windows cleaned inside and out",
+        "Tire shine & final inspection",
+      ],
     },
     {
-      title: "⭐ Refresh Detail",
+      title: "SUV Detail",
+      badge: "⭐ Most Popular",
+      price: "$140+",
+      time: "Approx. 2.5–3.5 Hours",
+      featured: true,
       description:
-        "A balanced interior and exterior refresh for vehicles that need extra attention after everyday use.",
+        "A thorough interior and exterior refresh designed for family vehicles, crossovers, and SUVs with more room to care for.",
+      bestFor: "Family vehicles, road trips, carpools, and everyday adventure.",
+      features: [
+        "Hand wash & foam bath",
+        "Wheels, tires & exterior trim cleaned",
+        "Interior vacuum, including cargo area",
+        "Dash, console & door panels wiped down",
+        "Windows cleaned inside and out",
+        "Tire shine & final inspection",
+      ],
     },
     {
-      title: "👑 Luxury Detail",
+      title: "Truck Detail",
+      badge: "Work Ready",
+      price: "$150+",
+      time: "Approx. 2.5–3.5 Hours",
+      featured: false,
       description:
-        "Our most complete vehicle detail, ideal for a deeper clean, special occasion, or getting ready to sell.",
+        "A detail built for hardworking trucks, with focused care for the cab, exterior, wheels, and bed area.",
+      bestFor: "Work trucks, weekend vehicles, and trucks that see the dirtier side of life.",
+      features: [
+        "Hand wash & foam bath",
+        "Wheels, tires & exterior trim cleaned",
+        "Cab vacuumed and wiped down",
+        "Truck bed blown out or rinsed",
+        "Windows cleaned inside and out",
+        "Tire shine & final inspection",
+      ],
     },
   ];
 
@@ -199,82 +217,71 @@ export default function Packages() {
           </div>
 
           <div className="mt-24">
-            <h3 className="mb-5 text-3xl font-bold">🚗 Vehicle Packages</h3>
+            <h3 className="text-3xl font-bold">🚗 Vehicle Detail Packages</h3>
 
-            <p className="mx-auto max-w-3xl leading-7 text-gray-400">
-              Choose the level of care that fits your vehicle and its current
-              condition. Every package is completed with the same
-              detail-focused approach.
+            <p className="mx-auto mt-5 max-w-2xl leading-7 text-gray-400">
+              Premium mobile detailing for sedans, SUVs, and trucks—done at
+              your home, workplace, dealership, or job site.
             </p>
 
-            <div className="mt-10 grid gap-5 text-left md:grid-cols-3">
-              {vehicleDetailLevels.map((detailLevel) => (
+            <div className="mt-12 grid gap-8 lg:grid-cols-3">
+              {vehiclePackages.map((pkg) => (
                 <div
-                  key={detailLevel.title}
-                  className="rounded-2xl border border-zinc-700 bg-zinc-900 p-6"
+                  key={pkg.title}
+                  className={`rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 ${
+                    pkg.featured
+                      ? "scale-105 border-yellow-500 bg-zinc-900 shadow-2xl shadow-yellow-500/10"
+                      : "border-zinc-700 bg-zinc-900 hover:border-yellow-500"
+                  }`}
                 >
-                  <h4 className="text-xl font-bold text-yellow-400">
-                    {detailLevel.title}
-                  </h4>
-                  <p className="mt-3 leading-7 text-gray-300">
-                    {detailLevel.description}
+                  <span
+                    className={`inline-block rounded-full px-4 py-2 text-sm font-semibold ${
+                      pkg.featured
+                        ? "bg-yellow-500 text-black"
+                        : "bg-zinc-800 text-yellow-400"
+                    }`}
+                  >
+                    {pkg.badge}
+                  </span>
+
+                  <h4 className="mt-6 text-3xl font-bold">{pkg.title}</h4>
+
+                  <p className="mt-5 text-5xl font-black text-yellow-500">
+                    Starting at {pkg.price}
                   </p>
+
+                  <p className="mt-2 text-gray-400">{pkg.time}</p>
+
+                  <p className="mt-6 leading-8 text-gray-300">
+                    {pkg.description}
+                  </p>
+
+                  <p className="mt-5 rounded-xl border border-zinc-700 bg-black/40 p-4 text-left text-sm leading-6 text-gray-300">
+                    <span className="font-bold text-yellow-500">Best For: </span>
+                    {pkg.bestFor}
+                  </p>
+
+                  <ul className="mt-8 space-y-4 text-left">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex gap-3">
+                        <span className="text-yellow-500">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="/book"
+                    className={`mt-10 block rounded-xl py-4 font-bold transition ${
+                      pkg.featured
+                        ? "bg-yellow-500 text-black hover:bg-yellow-400"
+                        : "bg-zinc-800 hover:bg-zinc-700"
+                    }`}
+                  >
+                    Book This Package
+                  </a>
                 </div>
               ))}
-            </div>
-
-            <p className="mx-auto mt-10 max-w-4xl rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-5 leading-7 text-gray-200">
-              Vehicle packages include exterior washing, interior cleaning,
-              premium products, and mobile service. Additional services are
-              available upon request.
-            </p>
-
-            <div className="mt-8 overflow-x-auto rounded-3xl border border-zinc-700">
-              <table className="min-w-[720px] w-full">
-                <thead className="bg-zinc-900">
-                  <tr>
-                    <th className="p-5 text-left">Vehicle</th>
-                    <th className="p-5 text-center">
-                      <span className="block text-base text-yellow-400">
-                        Essential Detail
-                      </span>
-                      <span className="mt-1 block text-xs font-normal text-gray-400">
-                        Exterior reset
-                      </span>
-                    </th>
-                    <th className="p-5 text-center">
-                      <span className="block text-base text-yellow-400">
-                        Refresh Detail
-                      </span>
-                      <span className="mt-1 block text-xs font-normal text-gray-400">
-                        Interior &amp; exterior care
-                      </span>
-                    </th>
-                    <th className="p-5 text-center">
-                      <span className="block text-base text-yellow-400">
-                        Luxury Detail
-                      </span>
-                      <span className="mt-1 block text-xs font-normal text-gray-400">
-                        Complete premium care
-                      </span>
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {vehiclePackages.map((vehicle) => (
-                    <tr
-                      key={vehicle.vehicle}
-                      className="border-t border-zinc-800 transition hover:bg-zinc-900/60"
-                    >
-                      <td className="p-5 font-semibold">{vehicle.vehicle}</td>
-                      <td className="p-5 text-center">{vehicle.essential}</td>
-                      <td className="p-5 text-center">{vehicle.refresh}</td>
-                      <td className="p-5 text-center">{vehicle.luxury}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           </div>
 
@@ -325,6 +332,7 @@ export default function Packages() {
             <h3 className="text-xl font-bold text-yellow-400">
               Need something not listed?
             </h3>
+
             <p className="mt-3 leading-7 text-gray-300">
               Contact us for a custom quote. We’d be happy to build a detailing
               package that fits your vehicle and your needs.
