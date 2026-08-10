@@ -3,20 +3,21 @@
 import { useState } from "react";
 import FadeIn from "./FadeIn";
 
+const defaultForm = {
+  name: "",
+  email: "",
+  phone: "",
+  service: "Motorcycle Detailing",
+  message: "",
+};
+
 export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [form, setForm] = useState(defaultForm);
 
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "Motorcycle Detailing",
-    message: "",
-  });
-
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     setLoading(true);
@@ -38,109 +39,119 @@ export default function Contact() {
         throw new Error(data.error || "Something went wrong.");
       }
 
-      setSuccess("✅ Your message has been sent! We'll get back to you soon.");
-
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        service: "Motorcycle Detailing",
-        message: "",
-      });
-    } catch (err: any) {
-      setError(err.message || "Failed to send message.");
+      setSuccess(
+        "Thanks for reaching out! We’ll get back to you as soon as possible."
+      );
+      setForm(defaultForm);
+    } catch (err: unknown) {
+      setError(
+        err instanceof Error ? err.message : "Failed to send message."
+      );
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   }
 
   return (
     <FadeIn>
-      <section
-        id="contact"
-        className="bg-black text-white py-24 px-6"
-      >
-        <div className="max-w-6xl mx-auto">
-
-          <div className="text-center mb-16">
-
-            <p className="uppercase tracking-[0.3em] text-yellow-500 font-semibold">
-              Contact Us
+      <section id="contact" className="bg-black px-6 py-20 text-white md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
+            <p className="font-semibold uppercase tracking-[0.3em] text-yellow-500">
+              Get in Touch
             </p>
 
-            <h2 className="text-4xl md:text-5xl">
-  Questions Before Booking?
-</h2>
+            <h2 className="mt-4 text-4xl font-black leading-tight md:text-5xl">
+              Ready to Make Your Ride Stand Out?
+            </h2>
 
-            <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-              Need help choosing the right detailing package or have a question about your motorcycle? 
-              Send us a message and we'll get back to you as soon as possible.
+            <p className="mt-6 text-base leading-7 text-gray-400 md:text-lg md:leading-8">
+              From motorcycles and personal vehicles to commercial fleets and
+              vehicle sales, NatFlipsWhips delivers detail-focused service that
+              keeps your ride looking its best.
             </p>
-
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-14">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-14">
+            <div className="rounded-3xl border border-zinc-700 bg-zinc-900 p-6 sm:p-8">
+              <h3 className="text-2xl font-bold">Contact Information</h3>
 
-            <div className="bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
-
-              <h3 className="text-2xl font-bold mb-8">
-                Contact Information
-              </h3>
-
-              <div className="space-y-6">
-
+              <div className="mt-8 space-y-8">
                 <div>
-                  <p className="text-gray-400 text-sm">Phone</p>
+                  <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
+                    Phone
+                  </p>
                   <a
                     href="tel:5203056529"
-                    className="text-xl hover:text-yellow-500 transition"
+                    className="mt-2 block text-xl font-semibold transition hover:text-yellow-500"
                   >
                     (520) 305-6529
-                    <p className="mt-2 text-sm text-gray-400">
-  Call or text anytime.
-</p>
                   </a>
+                  <p className="mt-2 text-sm text-gray-400">
+                    Call or text anytime for a quote or appointment.
+                  </p>
                 </div>
 
                 <div>
-                  <p className="text-gray-400 text-sm">Instagram</p>
+                  <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
+                    Instagram
+                  </p>
                   <a
                     href="https://instagram.com/natflipswhips"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl hover:text-yellow-500 transition"
+                    className="mt-2 block text-xl font-semibold transition hover:text-yellow-500"
                   >
                     @NatFlipsWhips
                   </a>
-                </div>
-
-                <div>
-                  <p className="text-gray-400 text-sm">Service Area</p>
-                  <p className="mt-2 text-gray-400">
-  Mobile detailing at your home or workplace.
-</p>
-                  <p className="text-xl">
-                    Tucson, Arizona
+                  <p className="mt-2 text-sm text-gray-400">
+                    Follow our latest details, inventory, and transformations.
                   </p>
                 </div>
 
-              </div>
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
+                    Service Area
+                  </p>
+                  <p className="mt-2 text-base leading-7 text-gray-300">
+                    Mobile detailing at your home, workplace, dealership, or
+                    job site.
+                  </p>
+                  <p className="mt-2 text-xl font-semibold">
+                    Tucson &amp; Surrounding Areas
+                  </p>
+                </div>
 
+                <div>
+                  <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
+                    Business Hours
+                  </p>
+                  <p className="mt-2 text-xl font-semibold">By Appointment</p>
+                  <p className="mt-2 text-sm text-gray-400">
+                    Flexible scheduling is available for individual vehicles and
+                    commercial fleets.
+                  </p>
+                </div>
+              </div>
             </div>
 
             <form
               onSubmit={handleSubmit}
-              className="bg-zinc-900 border border-zinc-700 rounded-3xl p-8 space-y-6"
+              className="space-y-5 rounded-3xl border border-zinc-700 bg-zinc-900 p-6 sm:p-8"
             >
+              <div>
+                <h3 className="text-2xl font-bold">Request a Quote</h3>
+                <p className="mt-2 text-sm leading-6 text-gray-400">
+                  Tell us what you drive and how we can help.
+                </p>
+              </div>
 
               <input
                 type="text"
                 placeholder="Full Name"
                 value={form.name}
-                onChange={(e) =>
-                  setForm({ ...form, name: e.target.value })
-                }
-                className="w-full rounded-xl bg-black border border-zinc-700 p-4 focus:border-yellow-500 outline-none"
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition placeholder:text-gray-500 focus:border-yellow-500"
                 required
               />
 
@@ -148,10 +159,8 @@ export default function Contact() {
                 type="email"
                 placeholder="Email Address"
                 value={form.email}
-                onChange={(e) =>
-                  setForm({ ...form, email: e.target.value })
-                }
-                className="w-full rounded-xl bg-black border border-zinc-700 p-4 focus:border-yellow-500 outline-none"
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition placeholder:text-gray-500 focus:border-yellow-500"
                 required
               />
 
@@ -159,59 +168,74 @@ export default function Contact() {
                 type="tel"
                 placeholder="Phone Number"
                 value={form.phone}
-                onChange={(e) =>
-                  setForm({ ...form, phone: e.target.value })
-                }
-                className="w-full rounded-xl bg-black border border-zinc-700 p-4 focus:border-yellow-500 outline-none"
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition placeholder:text-gray-500 focus:border-yellow-500"
               />
 
               <select
                 value={form.service}
-                onChange={(e) =>
-                  setForm({ ...form, service: e.target.value })
-                }
-                className="w-full rounded-xl bg-black border border-zinc-700 p-4 focus:border-yellow-500 outline-none"
+                onChange={(e) => setForm({ ...form, service: e.target.value })}
+                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
               >
                 <option>Motorcycle Detailing</option>
-                <option>Vehicle Purchase</option>
+                <option>Motorcycle Paint Correction</option>
+                <option>Motorcycle Ceramic Coating</option>
+                <option>Car Detailing</option>
+                <option>SUV / Crossover Detailing</option>
+                <option>Truck Detailing</option>
+                <option>Interior Deep Clean</option>
+                <option>Exterior Detail &amp; Paint Enhancement</option>
+                <option>Paint Correction</option>
+                <option>Ceramic Coating</option>
+                <option>Commercial Fleet Detailing</option>
+                <option>Dealership Vehicle Detailing</option>
+                <option>Commercial Equipment Detailing</option>
+                <option>Vehicle Purchase Inquiry</option>
+                <option>Vehicle Sales Question</option>
+                <option>Custom Quote</option>
                 <option>General Question</option>
               </select>
 
               <textarea
                 rows={6}
-                placeholder="Tell us how we can help..."
+                placeholder="Tell us about your vehicle, preferred service, location, or any questions you have..."
                 value={form.message}
-                onChange={(e) =>
-                  setForm({ ...form, message: e.target.value })
-                }
-                className="w-full rounded-xl bg-black border border-zinc-700 p-4 focus:border-yellow-500 outline-none resize-none"
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="w-full resize-none rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition placeholder:text-gray-500 focus:border-yellow-500"
                 required
               />
 
               {success && (
-                <p className="text-green-400">
-                  {success}
-                </p>
+                <div
+                  role="status"
+                  className="rounded-xl border border-green-500/40 bg-green-500/10 p-4"
+                >
+                  <p className="text-green-400">{success}</p>
+                </div>
               )}
 
               {error && (
-                <p className="text-red-400">
-                  {error}
-                </p>
+                <div
+                  role="alert"
+                  className="rounded-xl border border-red-500/40 bg-red-500/10 p-4"
+                >
+                  <p className="text-red-400">{error}</p>
+                </div>
               )}
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-yellow-500 text-black font-bold py-4 rounded-xl hover:bg-yellow-400 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50"
+                className="w-full rounded-xl bg-yellow-500 py-4 text-lg font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:bg-yellow-400 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                {loading ? "Sending..." : "Request a quote"}
+                {loading ? "Sending..." : "Send Message"}
               </button>
 
+              <p className="text-center text-sm text-gray-500">
+                We typically respond within one business day.
+              </p>
             </form>
-
           </div>
-
         </div>
       </section>
     </FadeIn>
