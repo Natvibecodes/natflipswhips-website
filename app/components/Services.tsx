@@ -70,9 +70,7 @@ export default function Services() {
                 <li>✓ Electric Vehicles</li>
               </ul>
 
-              <p className="mt-6 text-sm text-[#BFA46F] font-semibold">
-                Coming Soon
-              </p>
+             
 
             </div>
 
@@ -94,9 +92,7 @@ export default function Services() {
                 <li>✓ Lifted Vehicles</li>
               </ul>
 
-              <p className="mt-6 text-sm text-[#BFA46F] font-semibold">
-                Coming Soon
-              </p>
+             
 
             </div>
 
@@ -118,9 +114,7 @@ export default function Services() {
                 <li>✓ Company Vehicles</li>
               </ul>
 
-              <p className="mt-6 text-sm text-[#BFA46F] font-semibold">
-                Coming Soon
-              </p>
+        
 
             </div>
 
