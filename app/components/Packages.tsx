@@ -3,128 +3,67 @@
 import FadeIn from "./FadeIn";
 
 export default function Packages() {
-  const motorcyclePackages = [
-    {
-      title: "Basic Detail",
-      badge: "Essential Care",
-      price: "$100",
-      time: "Approx. 1.5 Hours",
-      featured: false,
-      description:
-        "A thorough maintenance wash that keeps your motorcycle clean and protected between deeper details.",
-      bestFor: "Maintenance washes every 2–4 weeks.",
-      features: [
-        "Foam bath & hand wash",
-        "Wheels & tires cleaned",
-        "Seat cleaned",
-        "Plastic & trim wiped down",
-        "Light air blower drying",
-        "Final inspection",
-      ],
-    },
-    {
-      title: "Refresh Detail",
-      badge: "⭐ Most Popular",
-      price: "$150",
-      time: "Approx. 2.5 Hours",
-      featured: true,
-      description:
-        "A deeper reset that removes road grime, restores shine, and refreshes the surfaces that need the most attention.",
-      bestFor: "Restoring shine and protecting your bike between seasons.",
-      features: [
-        "Foam bath & hand wash",
-        "Wheels, tires & fenders cleaned",
-        "Chrome & metal polished",
-        "Seat & surfaces wiped down",
-        "Whitewall-safe cleaning",
-        "Chain cleaned & lubricated",
-        "Light air blower drying",
-        "Final inspection",
-      ],
-    },
-    {
-      title: "Luxury Detail",
-      badge: "Show Quality",
-      price: "$250",
-      time: "Approx. 3.5 Hours",
-      featured: false,
-      description:
-        "Our premium show-quality detail with extra attention for paint, chrome, leather, and finishing touches.",
-      bestFor:
-        "Shows, selling, long trips, or riders who want the highest level of care.",
-      features: [
-        "Everything in the Refresh Detail",
-        "Tank & fairing deep clean",
-        "Engine detailing",
-        "Leather conditioning",
-        "Premium chrome polish",
-        "Paint sealant protection",
-        "Premium finishing touches",
-      ],
-    },
-  ];
-
   const vehiclePackages = [
     {
       title: "Premium Exterior Wash",
+      badge: "",
+      featured: false,
       time: "Approx. 1–2 Hours",
-      description:
-        "A premium exterior refresh that removes surface dirt and leaves your paint protected with a ceramic sealant.",
       prices: [
-        { vehicle: "Sedans", price: "$125" },
-        { vehicle: "SUVs", price: "$145" },
-        { vehicle: "Large SUVs & Trucks", price: "$165" },
+        { vehicle: "Sedans", price: "$115" },
+        { vehicle: "SUVs", price: "$135" },
+        { vehicle: "Large SUVs & Trucks", price: "$155" },
       ],
       features: [
-        "Full exterior foam bath",
-        "Ceramic sealant applied to paint — 6-month protection",
-        "Wheels & tires deep cleaned",
-        "Tire shine applied",
-      ],
-    },
-    {
-      title: "Interior Detail",
-      time: "Approx. 1.5–2.5 Hours",
-      description:
-        "A thorough interior reset that refreshes the surfaces, glass, leather, and hard-to-reach areas of your vehicle.",
-      prices: [
-        { vehicle: "Sedans", price: "$155" },
-        { vehicle: "SUVs", price: "$175" },
-        { vehicle: "Large SUVs & Trucks", price: "$195" },
-      ],
-      features: [
-        "Complete vacuum and wipe-down of cracks & crevices",
-        "UV protection applied to interior surfaces",
-        "Leather cleaned",
-        "Streak-free glass",
+        "Full Exterior Foam Bath",
+        "Ceramic Sealant Applied to Paint (6-month protection)",
+        "Wheels & Tires Deep Cleaned",
+        "Tire Shine Applied",
       ],
     },
     {
       title: "Full Detail",
+      badge: "Most Popular",
+      featured: true,
       time: "Approx. 2.5–5 Hours",
-      description:
-        "The complete inside-and-out detail for vehicles that need a deep clean, long-lasting protection, and a full refresh.",
       prices: [
-        { vehicle: "Sedans", price: "$260" },
-        { vehicle: "SUVs", price: "$280" },
-        { vehicle: "Large SUVs & Trucks", price: "$300" },
+        { vehicle: "Sedans", price: "$250" },
+        { vehicle: "SUVs", price: "$275" },
+        { vehicle: "Large SUVs & Trucks", price: "$290" },
       ],
       features: [
-        "Full exterior foam bath",
-        "Ceramic sealant applied to paint — 6-month protection",
-        "Wheels & tires deep cleaned",
-        "Tire shine applied",
-        "Complete vacuum and wipe-down of cracks & crevices",
-        "UV protection applied to interior surfaces",
-        "Leather cleaned",
-        "Streak-free glass",
+        "Full Exterior Foam Bath",
+        "Ceramic Sealant Applied to Paint (6-month protection)",
+        "Wheels & Tires Deep Cleaned",
+        "Tire Shine Applied",
+        "Complete Vacuum & Wipe Down of All Cracks & Crevices",
+        "UV Protection Applied to Interior Surfaces",
+        "Leather Cleaned",
+        "Streak-Free Glass",
+      ],
+    },
+    {
+      title: "Interior Detail",
+      badge: "",
+      featured: false,
+      time: "Approx. 1.5–2.5 Hours",
+      prices: [
+        { vehicle: "Sedans", price: "$145" },
+        { vehicle: "SUVs", price: "$165" },
+        { vehicle: "Large SUVs & Trucks", price: "$185" },
+      ],
+      features: [
+        "Complete Vacuum & Wipe Down of All Cracks & Crevices",
+        "UV Protection Applied to Interior Surfaces",
+        "Leather Cleaned",
+        "Streak-Free Glass",
       ],
     },
   ];
 
   const addOns = [
     { name: "Pet Hair Removal", price: "$50", centered: false },
-    { name: "Stain Removal", price: "$35/hr", centered: false },
+    { name: "Stain Removal", price: "$40/hr", centered: false },
     { name: "Car Seats", price: "$25", centered: false },
     {
       name: "Decontamination & Clay Bar Service",
@@ -157,24 +96,12 @@ export default function Packages() {
           </p>
 
           <h2 className="mt-4 text-3xl font-black sm:text-4xl md:text-5xl">
-            Detailing Packages
+            Vehicle Wash &amp; Detail Packages
           </h2>
 
-          <div className="mx-auto mb-12 mt-8 max-w-3xl rounded-2xl border border-yellow-500 bg-yellow-500/10 p-5 sm:p-6">
-            <h3 className="text-xl font-bold text-yellow-400 sm:text-2xl md:text-3xl">
-              🎂 Birthday Month Special
-            </h3>
-
-            <p className="mt-3 text-sm text-gray-200 sm:text-lg">
-              Receive
-              <span className="font-bold text-white"> $30 OFF </span>
-              any motorcycle detailing package booked during August.
-            </p>
-          </div>
-
-          <div className="mx-auto mb-14 max-w-3xl rounded-2xl border border-zinc-700 bg-zinc-900 p-5 sm:p-6">
+          <div className="mx-auto mb-14 mt-8 max-w-3xl rounded-2xl border border-zinc-700 bg-zinc-900 p-5 sm:p-6">
             <h3 className="text-xl font-bold text-white sm:text-2xl">
-              🚗 Multiple Vehicle Discount
+              Multiple Vehicle Discount
             </h3>
 
             <p className="mt-4 text-sm text-gray-300 sm:text-base">
@@ -183,50 +110,47 @@ export default function Packages() {
             </p>
           </div>
 
-          <h3 className="mb-8 text-2xl font-bold sm:mb-12 sm:text-3xl">
-            🏍 Motorcycle Packages
-          </h3>
-
-          <div className="grid gap-5 sm:gap-8 lg:grid-cols-3">
-            {motorcyclePackages.map((pkg) => (
+          <div className="grid gap-5 text-left sm:gap-8 lg:grid-cols-3">
+            {vehiclePackages.map((pkg) => (
               <div
                 key={pkg.title}
-                className={`rounded-2xl border p-5 text-left transition-all duration-300 sm:rounded-3xl sm:p-7 md:p-8 lg:hover:-translate-y-2 ${
+                className={`rounded-2xl border p-5 transition-all duration-300 sm:rounded-3xl sm:p-7 md:p-8 lg:hover:-translate-y-2 ${
                   pkg.featured
                     ? "border-yellow-500 bg-zinc-900 shadow-2xl shadow-yellow-500/10 lg:scale-105"
                     : "border-zinc-700 bg-zinc-900 hover:border-yellow-500"
                 }`}
               >
-                <span
-                  className={`inline-block rounded-full px-4 py-2 text-sm font-semibold ${
-                    pkg.featured
-                      ? "bg-yellow-500 text-black"
-                      : "bg-zinc-800 text-yellow-400"
+                {pkg.featured && (
+                  <span className="inline-block rounded-full bg-yellow-500 px-4 py-2 text-sm font-semibold text-black">
+                    {pkg.badge}
+                  </span>
+                )}
+
+                <h3
+                  className={`text-2xl font-bold text-yellow-400 sm:text-3xl ${
+                    pkg.featured ? "mt-5 sm:mt-6" : ""
                   }`}
                 >
-                  {pkg.badge}
-                </span>
-
-                <h4 className="mt-5 text-2xl font-bold sm:mt-6 sm:text-3xl">
                   {pkg.title}
-                </h4>
+                </h3>
 
-                <p className="mt-4 text-3xl font-black text-yellow-500 sm:mt-5 sm:text-4xl">
-                  Starting at {pkg.price}
-                </p>
-
-                <p className="mt-2 text-sm text-gray-400 sm:text-base">
+                <p className="mt-3 text-sm text-gray-400 sm:text-base">
                   {pkg.time}
                 </p>
 
-                <p className="mt-5 text-sm leading-7 text-gray-300 sm:mt-6 sm:text-base sm:leading-8">
-                  {pkg.description}
-                </p>
-
-                <p className="mt-5 rounded-xl border border-zinc-700 bg-black/40 p-4 text-sm leading-6 text-gray-300">
-                  <span className="font-bold text-yellow-500">Best For: </span>
-                  {pkg.bestFor}
-                </p>
+                <div className="mt-6 space-y-3 rounded-xl border border-zinc-700 bg-black/40 p-4">
+                  {pkg.prices.map((item) => (
+                    <div
+                      key={item.vehicle}
+                      className="flex items-center justify-between gap-4 text-sm sm:text-base"
+                    >
+                      <span className="text-gray-300">{item.vehicle}</span>
+                      <span className="font-bold text-yellow-500">
+                        {item.price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
                 <ul className="mt-6 space-y-3 text-sm sm:mt-8 sm:space-y-4 sm:text-base">
                   {pkg.features.map((feature) => (
@@ -242,7 +166,7 @@ export default function Packages() {
                   className={`mt-8 block rounded-xl py-3 text-center font-bold transition sm:mt-10 sm:py-4 ${
                     pkg.featured
                       ? "bg-yellow-500 text-black hover:bg-yellow-400"
-                      : "bg-zinc-800 hover:bg-zinc-700"
+                      : "bg-zinc-800 text-white hover:bg-zinc-700"
                   }`}
                 >
                   Book This Package
@@ -251,71 +175,9 @@ export default function Packages() {
             ))}
           </div>
 
-          <div className="mt-16 sm:mt-24">
-            <h3 className="text-2xl font-bold sm:text-3xl">
-              🚗 Vehicle Detail Packages
-            </h3>
-
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 sm:mt-5 sm:text-base">
-              Premium mobile detailing for sedans, SUVs, and trucks at your
-              home, workplace, dealership, or job site.
-            </p>
-
-            <div className="mt-8 grid gap-5 text-left sm:mt-12 sm:gap-8 lg:grid-cols-3">
-              {vehiclePackages.map((pkg) => (
-                <div
-                  key={pkg.title}
-                  className="rounded-2xl border border-zinc-700 bg-zinc-900 p-5 transition-all duration-300 hover:border-yellow-500 sm:rounded-3xl sm:p-7 md:p-8 lg:hover:-translate-y-2"
-                >
-                  <h4 className="text-2xl font-bold text-yellow-400 sm:text-3xl">
-                    {pkg.title}
-                  </h4>
-
-                  <p className="mt-2 text-sm text-gray-400 sm:text-base">
-                    {pkg.time}
-                  </p>
-
-                  <p className="mt-5 text-sm leading-7 text-gray-300 sm:mt-6 sm:text-base sm:leading-8">
-                    {pkg.description}
-                  </p>
-
-                  <div className="mt-6 space-y-3 rounded-xl border border-zinc-700 bg-black/40 p-4">
-                    {pkg.prices.map((item) => (
-                      <div
-                        key={item.vehicle}
-                        className="flex items-center justify-between gap-4 text-sm sm:text-base"
-                      >
-                        <span className="text-gray-300">{item.vehicle}</span>
-                        <span className="font-bold text-yellow-500">
-                          {item.price}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <ul className="mt-6 space-y-3 text-sm sm:mt-8 sm:space-y-4 sm:text-base">
-                    {pkg.features.map((feature) => (
-                      <li key={feature} className="flex gap-3">
-                        <span className="text-yellow-500">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <a
-                    href="/book"
-                    className="mt-8 block rounded-xl bg-yellow-500 py-3 text-center font-bold text-black transition hover:bg-yellow-400 sm:mt-10 sm:py-4"
-                  >
-                    Book This Package
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="mt-14 sm:mt-20">
             <h3 className="text-2xl font-bold sm:text-3xl">
-              ✨ Add-On Services
+              Add-On Services
             </h3>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 sm:text-base">
