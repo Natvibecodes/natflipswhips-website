@@ -123,21 +123,33 @@ export default function Packages() {
   ];
 
   const addOns = [
-    { name: "Pet Hair Removal", price: "$50" },
-    { name: "Stain Removal", price: "$50/hr" },
-    { name: "Car Seats", price: "$25" },
-    { name: "Decontamination & Clay Bar Service", price: "$70–$95" },
-    { name: "Polish", price: "$75" },
-    { name: "Polish & 9-Month Ceramic Coating", price: "$150" },
+    { name: "Pet Hair Removal", price: "$50", centered: false },
+    { name: "Stain Removal", price: "$35/hr", centered: false },
+    { name: "Car Seats", price: "$25", centered: false },
+    {
+      name: "Decontamination & Clay Bar Service",
+      price: "$70–$95",
+      centered: false,
+    },
+    { name: "Polish", price: "$75", centered: false },
+    {
+      name: "Polish & 9-Month Ceramic Coating",
+      price: "$150",
+      centered: false,
+    },
     {
       name: "Polish & 3-Year Ceramic Coating",
       price: "$200",
       note: "Decontamination & clay bar included",
+      centered: true,
     },
   ];
 
   return (
-    <section id="packages" className="bg-black px-4 py-14 text-white sm:px-5 md:px-6 md:py-20">
+    <section
+      id="packages"
+      className="bg-black px-4 py-14 text-white sm:px-5 md:px-6 md:py-20"
+    >
       <FadeIn>
         <div className="mx-auto max-w-7xl text-center">
           <p className="font-semibold uppercase tracking-[0.3em] text-yellow-500">
@@ -199,7 +211,7 @@ export default function Packages() {
                   {pkg.title}
                 </h4>
 
-                <p className="mt-4 text-4xl font-black text-yellow-500 sm:mt-5 sm:text-5xl">
+                <p className="mt-4 text-3xl font-black text-yellow-500 sm:mt-5 sm:text-4xl">
                   Starting at {pkg.price}
                 </p>
 
@@ -314,7 +326,11 @@ export default function Packages() {
               {addOns.map((addOn) => (
                 <div
                   key={addOn.name}
-                  className="rounded-xl border border-zinc-700 bg-zinc-900 p-4"
+                  className={`rounded-xl border border-zinc-700 bg-zinc-900 p-4 ${
+                    addOn.centered
+                      ? "sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-md lg:col-span-1 lg:col-start-2"
+                      : ""
+                  }`}
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h4 className="font-semibold text-gray-100">
@@ -336,16 +352,17 @@ export default function Packages() {
 
           <div className="mt-14 rounded-2xl border border-yellow-500 bg-zinc-900 p-6 sm:mt-20 sm:rounded-3xl sm:p-10">
             <h3 className="text-2xl font-bold text-yellow-500 sm:text-3xl">
-              🚜 Fleet &amp; Commercial Services
+              🚜 Fleet, Commercial &amp; Custom Motorcycle Services
             </h3>
 
-            <div className="mx-auto mt-7 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mx-auto mt-7 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 "Construction Equipment",
                 "Company Trucks",
                 "Work Vans",
                 "Commercial Fleets",
                 "Utility Vehicles",
+                "Motorcycle Custom Work",
               ].map((service) => (
                 <div
                   key={service}
@@ -357,8 +374,9 @@ export default function Packages() {
             </div>
 
             <p className="mx-auto mt-7 max-w-3xl text-sm leading-7 text-gray-300 sm:text-lg sm:leading-8">
-              Custom pricing available for one-time or recurring maintenance.
-              We’ll build a plan around your vehicles, schedule, and scope of
+              Custom pricing is available for one-time or recurring
+              maintenance, commercial vehicles, and custom motorcycle work.
+              We’ll build a plan around your vehicle, schedule, and scope of
               work.
             </p>
 
