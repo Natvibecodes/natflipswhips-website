@@ -126,10 +126,14 @@ export default function Contact() {
                   <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
                     Business Hours
                   </p>
-                  <p className="mt-2 text-xl font-semibold">By Appointment</p>
+                  <p className="mt-2 text-xl font-semibold">
+                    Monday–Friday: 7:00 AM–6:00 PM
+                  </p>
+                  <p className="mt-1 text-xl font-semibold">
+                    Saturday: 7:00 AM–12:00 PM
+                  </p>
                   <p className="mt-2 text-sm text-gray-400">
-                    Flexible scheduling is available for individual vehicles and
-                    commercial fleets.
+                    Sunday: Closed
                   </p>
                 </div>
               </div>
@@ -173,18 +177,20 @@ export default function Contact() {
               />
 
               <select
-  value={form.service}
-  onChange={(e) => setForm({ ...form, service: e.target.value })}
-  className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
->
-  <option>Sedan Detail</option>
-  <option>SUV Detail</option>
-  <option>Truck Detail</option>
-  <option>Motorcycle Detail</option>
-  <option>Commercial Detail</option>
-  <option>Vehicle Purchase</option>
-  <option>General Question</option>
-</select>
+                value={form.service}
+                onChange={(e) =>
+                  setForm({ ...form, service: e.target.value })
+                }
+                className="w-full rounded-xl border border-zinc-700 bg-black p-4 text-white outline-none transition focus:border-yellow-500"
+              >
+                <option>Sedan Detail</option>
+                <option>SUV Detail</option>
+                <option>Truck Detail</option>
+                <option>Motorcycle Detail</option>
+                <option>Commercial Detail</option>
+                <option>Vehicle Purchase</option>
+                <option>General Question</option>
+              </select>
 
               <textarea
                 rows={6}
