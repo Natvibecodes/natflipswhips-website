@@ -24,9 +24,19 @@ export default function Gallery() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-3xl text-lg text-[#B4B7BD]">
-              Every motorcycle is treated like it's our own—from the first foam
-              wash to the final shine.
+              Cars, trucks, SUVs and motorcycles, detailed where you park them
+              across Tucson. Every vehicle is treated like it is our own, from
+              the first foam wash to the final shine.
             </p>
+
+            <a
+              href="https://www.instagram.com/natflipswhips"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block text-sm uppercase tracking-[0.2em] text-[#BFA46F] underline underline-offset-8 hover:opacity-70"
+            >
+              See more on Instagram
+            </a>
 
           </div>
 
@@ -35,8 +45,8 @@ export default function Gallery() {
           <div className="mt-20 overflow-hidden rounded-3xl shadow-2xl">
 
             <img
-              src="/gallery/soapy-bike-1.png"
-              alt="Motorcycle Detail"
+              src="/gallery/mobile-car-detailing-tucson-az-snow-foam-wash-black-sedan.jpg"
+              alt="Snow foam wash on a black sedan during mobile car detailing in Tucson, AZ"
               className="h-[650px] w-full object-cover transition duration-500 hover:scale-105"
             />
 
@@ -48,8 +58,40 @@ export default function Gallery() {
 
             <div className="overflow-hidden rounded-3xl shadow-xl">
               <img
-                src="/gallery/foam-wash-1.jpg"
-                alt="Foam Wash"
+                src="/gallery/car-interior-detailing-tucson-az-red-leather-seats.jpg"
+                alt="Red leather seats cleaned during car interior detailing in Tucson, AZ"
+                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/gallery/mobile-auto-detailing-tucson-az-suv-exterior-front.jpg"
+                alt="SUV exterior after mobile auto detailing in Tucson, AZ"
+                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/gallery/suv-interior-detailing-tucson-az-dashboard-and-seats.jpg"
+                alt="SUV dashboard and seats after interior detailing in Tucson, AZ"
+                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/gallery/soapy-bike-1.png"
+                alt="Motorcycle being washed during mobile motorcycle detailing in Tucson, AZ"
+                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
+              />
+            </div>
+
+            <div className="overflow-hidden rounded-3xl shadow-xl">
+              <img
+                src="/gallery/mobile-detailing-tucson-az-black-sedan-paint-gloss.jpg"
+                alt="Black sedan paint gloss after mobile detailing in Tucson, AZ"
                 className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
               />
             </div>
@@ -57,23 +99,7 @@ export default function Gallery() {
             <div className="overflow-hidden rounded-3xl shadow-xl">
               <img
                 src="/gallery/drying-bike-1.jpg"
-                alt="Drying"
-                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl shadow-xl">
-              <img
-                src="/gallery/drying-bike-2.jpg"
-                alt="Finished Detail"
-                className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
-              />
-            </div>
-
-            <div className="overflow-hidden rounded-3xl shadow-xl">
-              <img
-                src="/gallery/clean-mirrors.png"
-                alt="Clean Mirrors"
+                alt="Motorcycle dried and finished after detailing in Tucson, AZ"
                 className="aspect-[4/3] w-full object-cover transition duration-500 hover:scale-105"
               />
             </div>
