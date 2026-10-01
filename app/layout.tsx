@@ -57,6 +57,7 @@ const businessSchema = {
   name: "NatFlipsWhips",
   url: "https://www.natflipswhips.com",
   telephone: "+1-520-305-6529",
+  sameAs: ["https://www.instagram.com/natflipswhips"],
   description:
     "Mobile auto detailing in Tucson, Arizona. Interior and exterior detailing for cars, trucks, SUVs, motorcycles and fleet equipment, brought to your home or workplace.",
   address: {
@@ -76,11 +77,12 @@ const businessSchema = {
     "@type": "OfferCatalog",
     name: "Detailing Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Interior Detail" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Exterior Detail" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Auto Detailing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Auto Interior Vacuuming" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Body Wash" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Seat Shampooing" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wheel Washing" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Detail" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wheels and Tires" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Paint Protection" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Motorcycle Detailing" } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fleet Detailing" } },
     ],
