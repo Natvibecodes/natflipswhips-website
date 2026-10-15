@@ -21,14 +21,16 @@ export default function Footer() {
           <h3 className="font-bold text-[#BFA46F]">Business Hours</h3>
 
           <p className="mt-2 text-sm text-gray-400">
-            Monday–Friday: 7:00 AM–6:00 PM
+            Monday, Wednesday, Friday: 7:00 AM–5:00 PM
           </p>
 
           <p className="text-sm text-gray-400">
-            Saturday: 7:00 AM–12:00 PM
+            Saturday: 10:00 AM–2:00 PM
           </p>
 
-          <p className="text-sm text-gray-500">Sunday: Closed</p>
+          <p className="text-sm text-gray-500">
+            Tuesday, Thursday & Sunday: Closed
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
