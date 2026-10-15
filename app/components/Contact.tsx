@@ -88,7 +88,7 @@ export default function Contact() {
                     (520) 305-6529
                   </a>
                   <p className="mt-2 text-sm text-gray-400">
-                    Call or text anytime for a quote or appointment.
+                    Call or text for a quote or appointment.
                   </p>
                 </div>
 
@@ -126,14 +126,17 @@ export default function Contact() {
                   <p className="text-sm font-medium uppercase tracking-wider text-yellow-500">
                     Business Hours
                   </p>
+
                   <p className="mt-2 text-xl font-semibold">
-                    Monday–Friday: 7:00 AM–6:00 PM
+                    Monday, Wednesday, Friday: 7:00 AM–5:00 PM
                   </p>
+
                   <p className="mt-1 text-xl font-semibold">
-                    Saturday: 7:00 AM–12:00 PM
+                    Saturday: 10:00 AM–2:00 PM
                   </p>
+
                   <p className="mt-2 text-sm text-gray-400">
-                    Sunday: Closed
+                    Tuesday, Thursday &amp; Sunday: Closed
                   </p>
                 </div>
               </div>
