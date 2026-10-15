@@ -16,7 +16,6 @@ export default function Packages() {
       ],
       features: [
         "Full Exterior Foam Bath",
-        "Ceramic Sealant Applied to Paint (6-month protection)",
         "Wheels & Tires Deep Cleaned",
         "Tire Shine Applied",
       ],
@@ -33,7 +32,6 @@ export default function Packages() {
       ],
       features: [
         "Full Exterior Foam Bath",
-        "Ceramic Sealant Applied to Paint (6-month protection)",
         "Wheels & Tires Deep Cleaned",
         "Tire Shine Applied",
         "Complete Vacuum & Wipe Down of All Cracks & Crevices",
