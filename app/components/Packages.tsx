@@ -69,17 +69,6 @@ export default function Packages() {
       centered: false,
     },
     { name: "Polish", price: "$75", centered: false },
-    {
-      name: "Polish & 9-Month Ceramic Coating",
-      price: "$150",
-      centered: false,
-    },
-    {
-      name: "Polish & 3-Year Ceramic Coating",
-      price: "$200",
-      note: "Decontamination & clay bar included",
-      centered: true,
-    },
   ];
 
   return (
@@ -186,11 +175,7 @@ export default function Packages() {
               {addOns.map((addOn) => (
                 <div
                   key={addOn.name}
-                  className={`rounded-xl border border-zinc-700 bg-zinc-900 p-4 ${
-                    addOn.centered
-                      ? "sm:col-span-2 sm:mx-auto sm:w-full sm:max-w-md lg:col-span-1 lg:col-start-2"
-                      : ""
-                  }`}
+                  className="rounded-xl border border-zinc-700 bg-zinc-900 p-4"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h4 className="font-semibold text-gray-100">
@@ -201,10 +186,6 @@ export default function Packages() {
                       {addOn.price}
                     </span>
                   </div>
-
-                  {addOn.note && (
-                    <p className="mt-2 text-sm text-gray-400">{addOn.note}</p>
-                  )}
                 </div>
               ))}
             </div>
